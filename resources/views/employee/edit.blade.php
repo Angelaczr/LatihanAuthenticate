@@ -74,6 +74,18 @@
                                 <div class="text-danger"><small>{{ $message }}</small></div>
                             @enderror
                         </div>
+                        <div class="col-md-12 mb-3">
+                            <label for="age" class="form-label">Curriculum Vitae (CV)</label>
+                            @if ($employee->original_filename)
+                                <h5>{{ $employee->original_filename }}</h5>
+                                <a href="{{ route('employees.downloadFile', ['employeeId' => $employee->id]) }}" class="btn btn-primary btn-sm mt-2">
+                                    <i class="bi bi-download me-1"></i> Download CV
+                                </a>
+                            @else
+                                <h5>Tidak ada</h5>
+                            @endif
+                        </div>
+                    </div>
                     </div>
                     <hr>
                     <div class="row">
@@ -93,11 +105,3 @@
 
     </div>
 @endsection
-
-
-{{-- <form action="{{ route('employees.update', {}) }}" method="POST"> --}}
-        {{-- <form action="{{ route('employees.update', ['id' => Auth::$user->id $profile.blad->id]) }}" method="POST" enctype="multipart/form-data" id="registerForm">
-                @csrf
-                @method('put')
-                    <div class="card-body">
-                    <div class="d-flex align-items-start align-items-sm-center gap-4"> --}}
