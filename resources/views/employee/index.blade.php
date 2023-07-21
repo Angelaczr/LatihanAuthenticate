@@ -34,7 +34,7 @@
 @push('scripts')
    <script type="module">
        $(document).ready(function() {
-           $("#employeesTable").DataTable({
+           $("#employeeTable").DataTable({
                serverSide: true,
                processing: true,
                ajax: "/getEmployees",
